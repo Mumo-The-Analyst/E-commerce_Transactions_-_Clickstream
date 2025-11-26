@@ -40,7 +40,39 @@ The dataset contains 7 tables as follows:
   
 - GitHub – Repository for SQL scripts, documentation, dashboard files, and project write-up.
   
-## 4. Exploratory Data Analysis
+## 4. Data Preparation and Cleaning
+Before answering business questions, I performed a thorough data quality assessment across all tables in the e-commerce clickstream dataset. The goal was to ensure accuracy, consistency, and reliability for downstream analytics and modeling.
+
+### 4.1 Handling Missing Values
+A NULL-value assessment was conducted on all tables (customers, products, sessions, orders, order_items, events, and reviews).
+
+**Findings**
+
+- Only the events table contained NULL values (760958 NULL Values).
+
+![event_null_values](asset/events_null_values.png)
+
+This is expected in clickstream datasets because different event types generate different attributes.
+  **Example:** page_view events do not produce qty, cart_size, or amount_usd.
+            :purchase events contain payment and amount information, while browsing events do not.
+**Actions Taken**
+Kept NULL values in the events table to preserve the semantic meaning of each event type.
+(Replacing NULLs with zeros would distort behavioral patterns.)
+
+### 4.2 Removing Duplicate Records
+A duplicate check was performed on all tables using grouping logic.
+
+**Findings**
+
+- Only the order_items table contained duplicates.
+  
+- Identified 73 duplicated line-item pairs, representing 146 duplicated rows.
+
+![order_items_duplicates](asset/order_items_duplicates.png)
+
+
+**Actions Taken**
+Duplicates were removed using a ROW_NUMBER () CTE approach to keep exactly one copy of each item:
 
 ## 5. Data Analysis (Answering Business Questions)
 
