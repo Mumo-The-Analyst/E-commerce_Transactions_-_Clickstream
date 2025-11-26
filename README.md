@@ -18,7 +18,7 @@ By transforming raw clickstream, session, and transaction data into meaningful s
 ## 2. Dataset
 The dataset contains 7 tables as follows:
 
-- Customers: customer_id, name, email, country, age, signup_date, marketing_opt_in
+- `customers`: customer_id, name, email, country, age, signup_date, marketing_opt_in
 
 - Sessions: session_id, customer_id, start_time, device, source, country
 
