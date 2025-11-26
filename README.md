@@ -54,8 +54,7 @@ A NULL-value assessment was conducted on all tables (customers, products, sessio
 
 This is expected in clickstream datasets because different event types generate different attributes.
 
-  **Example:** page_view events do not produce qty, cart_size, or amount_usd.
-            :purchase events contain payment and amount information, while browsing events do not.
+  **Example:** page_view events do not produce qty, cart_size, or amount_usd, purchase events contain payment and amount information, while browsing events do not.
             
 **Actions Taken**
 
@@ -78,6 +77,19 @@ A duplicate check was performed on all tables using grouping logic.
 **Actions Taken**
 
 Duplicates were removed using a ROW_NUMBER () CTE approach to keep exactly one copy of each item:
+
+``` SQL
+WITH duplicates_cte AS (
+    SELECT *,
+           ROW_NUMBER() OVER (
+               PARTITION BY order_id, product_id, unit_price_usd, quantity, line_total_usd
+               ORDER BY order_id
+           ) AS rn
+    FROM order_items
+)
+DELETE FROM duplicates_cte
+WHERE rn > 1;
+```
 
 ## 5. Data Analysis (Answering Business Questions)
 
