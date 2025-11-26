@@ -20,17 +20,17 @@ The dataset contains 7 tables as follows:
 
 - `customers`: customer_id, name, email, country, age, signup_date, marketing_opt_in
 
-- Sessions: session_id, customer_id, start_time, device, source, country
+- `sessions`: session_id, customer_id, start_time, device, source, country
 
-- Events: event_id, session_id, timestamp, event_type, product_id, qty, cart_size, payment, discount_pct, amount_usd
+- `events`: event_id, session_id, timestamp, event_type, product_id, qty, cart_size, payment, discount_pct, amount_usd
 
-- Orders: order_id, customer_id, order_time, payment_method, discount_pct, subtotal_usd, total_usd, country, device, source
+- `orders`: order_id, customer_id, order_time, payment_method, discount_pct, subtotal_usd, total_usd, country, device, source
 
-- Order_Items: order_id, product_id, unit_price_usd, quantity, line_total_usd
+- `order_items`: order_id, product_id, unit_price_usd, quantity, line_total_usd
 
-- Products: product_id, category, name, price_usd, cost_usd, margin_usd
+- `products`: product_id, category, name, price_usd, cost_usd, margin_usd
 
-- Reviews: review_id, order_id, product_id, rating, review_text, review_time
+- `reviews`: review_id, order_id, product_id, rating, review_text, review_time
 
 ## 3. Tools
 
@@ -48,7 +48,7 @@ A NULL-value assessment was conducted on all tables (customers, products, sessio
 
 **Findings**
 
-- Only the events table contained NULL values (760958 NULL Values).
+- Only the `events` table contained NULL values (760958 NULL Values).
 
 ![event_null_values](asset/events_null_values.png)
 
@@ -58,7 +58,7 @@ This is expected in clickstream datasets because different event types generate 
             
 **Actions Taken**
 
-Kept NULL values in the events table to preserve the semantic meaning of each event type.
+Kept NULL values in the `events` table to preserve the semantic meaning of each event type.
 (Replacing NULLs with zeros would distort behavioral patterns.)
 
 ### 4.2 Removing Duplicate Records
@@ -67,11 +67,11 @@ A duplicate check was performed on all tables using grouping logic.
 
 **Findings**
 
-- Only the order_items table contained duplicates.
+- Only the `order_items` table contained duplicates.
   
 - Identified 73 duplicated line-item pairs, representing 146 duplicated rows.
 
-![order_items_duplicates](asset/order_items_duplicates.png)
+![order_items_duplicates](assets/order_items_duplicates.png)
 
 
 **Actions Taken**
