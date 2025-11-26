@@ -53,13 +53,17 @@ A NULL-value assessment was conducted on all tables (customers, products, sessio
 ![event_null_values](asset/events_null_values.png)
 
 This is expected in clickstream datasets because different event types generate different attributes.
+
   **Example:** page_view events do not produce qty, cart_size, or amount_usd.
             :purchase events contain payment and amount information, while browsing events do not.
+            
 **Actions Taken**
+
 Kept NULL values in the events table to preserve the semantic meaning of each event type.
 (Replacing NULLs with zeros would distort behavioral patterns.)
 
 ### 4.2 Removing Duplicate Records
+
 A duplicate check was performed on all tables using grouping logic.
 
 **Findings**
@@ -72,6 +76,7 @@ A duplicate check was performed on all tables using grouping logic.
 
 
 **Actions Taken**
+
 Duplicates were removed using a ROW_NUMBER () CTE approach to keep exactly one copy of each item:
 
 ## 5. Data Analysis (Answering Business Questions)
