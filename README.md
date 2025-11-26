@@ -44,13 +44,13 @@ The dataset contains 7 tables as follows:
 Before answering business questions, I performed a thorough data quality assessment across all tables in the e-commerce clickstream dataset. The goal was to ensure accuracy, consistency, and reliability for downstream analytics and modeling.
 
 ### 4.1 Handling Missing Values
-A NULL-value assessment was conducted on all tables (customers, products, sessions, orders, order_items, events, and reviews).
+A NULL-value assessment was conducted on all tables (`customers`, `products`, `sessions`, `orders`, `order_items`, `events`, and `reviews`).
 
 **Findings**
 
 - Only the `events` table contained NULL values (760958 NULL Values).
 
-![event_null_values](asset/events_null_values.png)
+![event_null_values](assets/events_null_values.png)
 
 This is expected in clickstream datasets because different event types generate different attributes.
 
