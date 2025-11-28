@@ -94,6 +94,7 @@ WHERE rn > 1;
 ## 5. Data Analysis (Answering Business Questions)
 
 I performed structured analysis in Microsoft SQL Management Studio to answer key business questions:
+
  1. What is the total revenue and profit per year?
 ```sql
 WITH revenue_per_year AS (
@@ -125,7 +126,7 @@ JOIN profit_per_year p
     ON r.year = p.year
 ORDER BY r.year;
 ```
-![annual_revenue_and_profit](assets/.png)
+![annual_revenue_and_profit](assets/annual_revenue_and_profit.png)
 
 - From 2020 to 2025, ShopEase Online maintained stable revenue and profit levels with slight year-to-year fluctuations, peaking in 2021–2023 before experiencing a moderate decline in 2024–2025.
 
@@ -147,7 +148,7 @@ GROUP BY
 ORDER BY 
     total_revenue DESC;
 ```
-![top_10_products_by_revenue](assets/.png)
+![top_10_products_by_revenue](assets/top_10_products_by_revenue.png)
 
 - The top 10 revenue-generating products are dominated by Electronics, with high-performing items like mice, headphones, webcams, and smartwatches, followed by strong contributions from Sports and Fashion categories, each generating between $8,100 and $9,860 in total revenue.
 
@@ -167,7 +168,7 @@ GROUP BY
     c.customer_id, c.name, c.country
 ORDER BY spending_rank;
 ```
-![top_10_customers_by_total_spending](assets/.png)
+![top_10_customers_by_total_spending](assets/top_10_customers_by_total_spending.png)
 
 - The top 10 highest-spending customers come from diverse countries including Spain, the US, France, Poland, Brazil, and Australia, with total spending ranging from $2,230 to $3,026, showing that high-value customers consistently place multiple orders and drive a significant share of overall revenue.
 
@@ -199,7 +200,7 @@ SELECT
 FROM repeat_flag
 ORDER BY order_year;
 ```
-![annual_repeat_customer_pct](assets/.png)
+![annual_repeat_customer_pct](assets/annual_repeat_customer_pct.png)
 
 - Repeat purchase rates remained relatively stable between 12% and 14% from 2020 to 2025, indicating consistent customer retention levels with only minor year-to-year fluctuations.
 
@@ -240,7 +241,7 @@ LEFT JOIN revenues r
 ORDER BY conversion_rate_pct DESC;
 ```
 
-![source](assets/.png)
+![source](assets/source.png)
 
 - Across all acquisition channels, conversion rates remained consistently around 26%, with organic and direct sources generating the highest total revenue and order volume despite similar conversion performance to paid, social, referral, and email sources.
 
@@ -256,7 +257,7 @@ GROUP BY device
 ORDER BY total_revenue DESC;
 ```
 
-![revenue_by_device](assets/.png)
+![revenue_by_device](assets/revenue_by_device.png)
 
 - Mobile devices generated the highest revenue and order volume, followed by desktop and tablet, with all three showing similar average order values around $132–$135.
 
@@ -299,7 +300,7 @@ GROUP BY
 ORDER BY total_revenue DESC;
 ```
 
-![revenue_by_discounts](assets/.png)
+![revenue_by_discounts](assets/revenue_by_discounts.png)
 
 - Orders with no discount generated the highest revenue overall, but moderate discounts (1–20%) delivered higher profit margins—peaking at nearly 19%—showing that strategic discounting can improve profitability while sustaining strong order volumes.
 
@@ -340,7 +341,7 @@ JOIN session_conversion conv
     ON sc.session_id = conv.session_id;
 ```
 
-![cart_size_conversion_rate](assets/.png)
+![cart_size_conversion_rate](assets/cart_size_conversion_rate.png)
 
 - ShopEase users added an average of 2.29 items to their cart per session, with a strong overall conversion rate of 38.55%, indicating efficient browsing-to-purchase behavior.
 
@@ -377,7 +378,7 @@ GROUP BY
 ORDER BY rating_range DESC;
 ```
 
-![product_rating_on_revenue](assets/.png)
+![product_rating_on_revenue](assets/product_rating_on_revenue.png)
 
 - Higher-rated products consistently drove greater sales and revenue, with 5-star items generating the highest volume and revenue, while lower-rated products showed a clear decline in both quantity sold and total earnings.
 
@@ -393,7 +394,7 @@ GROUP BY country
 ORDER BY total_revenue DESC;
 ```
 
-![revenue_by_country](assets/.png)
+![revenue_by_country](assets/revenue_by_country.png)
 
 - The United States generated the highest revenue and order volume, followed by the UK, India, Brazil, and major European markets, highlighting strong sales performance across diverse international customer bases.
 
