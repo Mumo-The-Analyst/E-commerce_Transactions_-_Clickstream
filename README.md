@@ -95,7 +95,7 @@ WHERE rn > 1;
 
 I performed structured analysis in Microsoft SQL Management Studio to answer key business questions:
 
-** 1. What is the total revenue and profit per year?**
+**1. What is the total revenue and profit per year?**
 ```sql
 WITH revenue_per_year AS (
     SELECT 
