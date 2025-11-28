@@ -95,7 +95,7 @@ WHERE rn > 1;
 
 I performed structured analysis in Microsoft SQL Management Studio to answer key business questions:
 
- 1. What is the total revenue and profit per year?
+** 1. What is the total revenue and profit per year?**
 ```sql
 WITH revenue_per_year AS (
     SELECT 
@@ -130,7 +130,7 @@ ORDER BY r.year;
 
 - From 2020 to 2025, ShopEase Online maintained stable revenue and profit levels with slight year-to-year fluctuations, peaking in 2021–2023 before experiencing a moderate decline in 2024–2025.
 
-2. Which ten products generate the highest revenue?
+**2. Which ten products generate the highest revenue?**
 
 ```sql
 SELECT TOP 10
@@ -152,7 +152,7 @@ ORDER BY
 
 - The top 10 revenue-generating products are dominated by Electronics, with high-performing items like mice, headphones, webcams, and smartwatches, followed by strong contributions from Sports and Fashion categories, each generating between $8,100 and $9,860 in total revenue.
 
-3. Who are the top 10 customers by total spending and how frequently do they order?
+**3. Who are the top 10 customers by total spending and how frequently do they order?**
 ```sql
 SELECT TOP 10
     c.customer_id,
@@ -172,7 +172,7 @@ ORDER BY spending_rank;
 
 - The top 10 highest-spending customers come from diverse countries including Spain, the US, France, Poland, Brazil, and Australia, with total spending ranging from $2,230 to $3,026, showing that high-value customers consistently place multiple orders and drive a significant share of overall revenue.
 
-4. What percentage of customers make repeat purchases, and how does it change over time?
+**4. What percentage of customers make repeat purchases, and how does it change over time?**
 ```sql
 WITH customer_orders AS (
     SELECT 
@@ -204,7 +204,7 @@ ORDER BY order_year;
 
 - Repeat purchase rates remained relatively stable between 12% and 14% from 2020 to 2025, indicating consistent customer retention levels with only minor year-to-year fluctuations.
 
-5. Which acquisition sources (e.g., ads, organic, email) generate the highest conversion rates and revenue?
+**5. Which acquisition sources (e.g., ads, organic, email) generate the highest conversion rates and revenue?**
 
 ```sql
 WITH conversions AS (
@@ -245,7 +245,7 @@ ORDER BY conversion_rate_pct DESC;
 
 - Across all acquisition channels, conversion rates remained consistently around 26%, with organic and direct sources generating the highest total revenue and order volume despite similar conversion performance to paid, social, referral, and email sources.
 
-6. Which devices (mobile, desktop, tablet) contribute most to revenue?
+**6. Which devices (mobile, desktop, tablet) contribute most to revenue?**
 ```sql
 SELECT 
     device,
@@ -261,7 +261,7 @@ ORDER BY total_revenue DESC;
 
 - Mobile devices generated the highest revenue and order volume, followed by desktop and tablet, with all three showing similar average order values around $132–$135.
 
-7. How do discounts affect total revenue, order volume, and profit margins?
+**7. How do discounts affect total revenue, order volume, and profit margins?**
 
 ```sql
 SELECT 
@@ -304,7 +304,7 @@ ORDER BY total_revenue DESC;
 
 - Orders with no discount generated the highest revenue overall, but moderate discounts (1–20%) delivered higher profit margins—peaking at nearly 19%—showing that strategic discounting can improve profitability while sustaining strong order volumes.
 
-8. What is the average cart size and conversion rate per session?
+**8. What is the average cart size and conversion rate per session?**
 
 ```sql
 WITH session_cart AS (
@@ -345,7 +345,7 @@ JOIN session_conversion conv
 
 - ShopEase users added an average of 2.29 items to their cart per session, with a strong overall conversion rate of 38.55%, indicating efficient browsing-to-purchase behavior.
 
-9. How does product rating affect sales volume and revenue?
+**9. How does product rating affect sales volume and revenue?**
 
 ```sql
 SELECT 
@@ -382,7 +382,7 @@ ORDER BY rating_range DESC;
 
 - Higher-rated products consistently drove greater sales and revenue, with 5-star items generating the highest volume and revenue, while lower-rated products showed a clear decline in both quantity sold and total earnings.
 
-10. Which 10 countries generate the highest revenue?
+**10. Which 10 countries generate the highest revenue?**
 
 ```sql
 SELECT TOP 10
