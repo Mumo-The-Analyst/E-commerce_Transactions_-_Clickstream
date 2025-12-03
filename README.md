@@ -517,4 +517,59 @@ The dashboard has three pages
 
 ## 7. Business Recommendations
 
+### 1. Invest More in Organic and Direct Acquisition Channels
+   
+**Insight:**
+
+Organic and direct traffic consistently deliver the highest revenue, largest order volume, and strong conversion rates, outperforming paid, referral, email, and social channels.
+
+**Recommendation:**
+
+Increase investment in SEO, content marketing, brand awareness, and returning customer engagement. Strengthening these channels will generate high-quality traffic without significantly increasing acquisition costs.
+
+### 2. Optimize Mobile Experience to Maximize Revenue
+
+**Insight:**
+
+Mobile devices account for the largest number of orders and the highest revenue contribution, but desktop conversion rates are slightly higher.
+
+**Recommendation:**
+
+Prioritize mobile UX improvements:
+
+- Faster load times
+  
+- Cleaner product pages
+  
+- Simplified checkout flow
+
+- One-click payment options
+
+Improving mobile conversion rates even slightly will produce a large revenue impact due to mobile's high traffic volume.
+
+### 3. Introduce Targeted Discount Strategies to Drive Higher Profit Margins
+
+**Insight:**
+
+Lower discounts (0–5%) produce higher profit margins compared to no discounts and also contribute significantly to revenue that higher discounts.
+
+**Recommendation:**
+
+Use smart, segmented discount campaigns targeting:
+
+- High-value customers
+
+- Cart abandoners
+
+- Seasonal promotions
+
+- Slow-moving product categories
+
+This can boost purchase frequency while protecting profitability.
+
+### 4.
+
+
 ## 8. Conclusion
+
+This project successfully demonstrated a full end-to-end data analysis workflow—from SQL data cleaning and exploratory analysis to building interactive Power BI dashboards. Using SQL, key business metrics such as revenue trends, repeat purchase behavior, device performance, discount impact, customer rating insights, and country-level revenue distribution were extracted and validated. These insights were then visualized in Power BI through a structured set of pages, allowing stakeholders to explore acquisition performance, customer behavior, and product profitability interactively. Overall, the project provides a comprehensive analytical foundation that can support data-driven decision-making in marketing, customer experience optimization, and product strategy.
