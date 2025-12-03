@@ -505,15 +505,15 @@ SWITCH(
 The dashboard has three pages
 1. General Overview
 
-![General_Overview](assets/)
+![General_Overview](assets/general_overview.png)
 
 2. Customers Insights
 
-![Customers_Insights](assets/)
+![Customers_Insights](assets/customers_insights.png)
 
 3. Products Insights
 
-![Products_Insights](assets/)
+![Products_Insights](assets/products_insights.png)
 
 ## 7. Business Recommendations
 
