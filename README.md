@@ -399,6 +399,121 @@ ORDER BY total_revenue DESC;
 - The United States generated the highest revenue and order volume, followed by the UK, India, Brazil, and major European markets, highlighting strong sales performance across diverse international customer bases.
 
 ## 6. Dashboard in Power BI
+To visualize the data in Power BI, i created several DAX measures
+```DAX
+Total Add to Cart = 
+CALCULATE(COUNTROWS(events), events[event_type] = "add_to_cart")
+```
+
+```DAX
+Total Checkout = 
+CALCULATE(COUNTROWS(events), events[event_type] = "checkout")
+```
+
+```DAX
+Total Product Views = 
+CALCULATE(COUNTROWS(events), events[event_type] = "page_view")
+```
+
+```DAX
+Revenue = SUM(order_items[line_total_usd])
+```
+
+```DAX
+Total Cost = 
+SUMX(
+    order_items,
+    order_items[quantity] * RELATED(products[cost_usd])
+)
+```
+
+```DAX
+Profit = [Revenue] - [Total Cost]
+```
+
+```DAX
+Revenue by Rating = 
+CALCULATE(
+    SUM(order_items[line_total_usd]),
+    KEEPFILTERS(reviews[rating])
+)
+```
+
+```DAX
+Sales Volume = 
+CALCULATE(
+    SUM(order_items[quantity]),
+    KEEPFILTERS(reviews[rating])
+)
+```
+
+```DAX
+Avg Order Value = DIVIDE(SUM(orders[total_usd]), COUNT(orders[order_id]), 2)
+```
+
+```DAX
+Conversion Rate = ROUND(DIVIDE(CALCULATE(DISTINCTCOUNT(orders[order_id])), DISTINCTCOUNT(sessions[session_id]), 0) * 100, 2)
+```
+
+```DAX
+Repeat Purchase Rate % = 
+VAR TotalCustomers = DISTINCTCOUNT(orders[customer_id])
+VAR RepeatCustomers = 
+    CALCULATE(
+        DISTINCTCOUNT(orders[customer_id]),
+        FILTER(
+            VALUES(orders[customer_id]),
+            CALCULATE(COUNTROWS(orders)) > 1
+        )
+    )
+RETURN
+DIVIDE(RepeatCustomers, TotalCustomers, 0) * 100
+```
+
+```DAX
+Total Orders = COUNT(orders[order_id])
+```
+
+```DAX
+Total Purchases = 
+COUNTROWS(orders)
+```
+
+```DAX
+Total Spending = SUM(orders[total_usd])
+```
+
+```DAX
+Total Sessions = 
+COUNTROWS(sessions)
+```
+
+I also created a new table `FunnelStages`, with three columns `Funnel Value`, `Stage`, and `Value`
+
+The `Funnel Value` was a DAX measure calculated through the following formula:
+```DAX
+Funnel Value = 
+SWITCH(
+    SELECTEDVALUE(FunnelStages[Stage]),
+    "sessions", [Total Sessions],
+    "product_views", [Total Product Views],
+    "add_to_cart", [Total Add to Cart],
+    "checkout", [Total Checkout],
+    "purchases", [Total Purchases]
+)
+```
+The dashboard has three pages
+1. General Overview
+
+![General_Overview](assets/)
+
+2. Customers Insights
+
+![Customers_Insights](assets/)
+
+3. Products Insights
+
+![Products_Insights](assets/)
 
 ## 7. Business Recommendations
 
