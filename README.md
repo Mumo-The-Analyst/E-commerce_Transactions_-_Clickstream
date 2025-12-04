@@ -567,8 +567,40 @@ Use smart, segmented discount campaigns targeting:
 
 This can boost purchase frequency while protecting profitability.
 
-### 4.
+### 4. Prioritize high-performing electronics for promotions & stock allocation
 
+**Insights:**
+
+Top 10 Products by Revenue and Top 10 by Profit clearly show that Electronics dominate both revenue and profitability especially mice, headphones, webcams, and smartwatches. These products consistently appear in both lists, meaning:
+
+- High demand
+  
+- High profitability
+  
+- Strong contribution to total revenue
+  
+**Recommendations:**
+
+- Increase inventory allocation for top-selling Electronics SKUs.
+  
+- Run targeted marketing campaigns for high-profit products like Mouse RosyBrown 419 and Headphones Aquamarine 465.
+  
+- Consider bundling Electronics with related accessories to boost AOV.
+
+
+### 5. Optimize discount strategy by focusing on 1–10% range
+
+**Insights:**
+
+The Revenue and Profit by Discount chart shows that the 1–10% discount range generates strong revenue while maintaining higher profit margins than deeper discounts.
+
+**Recommendations:**
+
+- Shift discount strategies toward low-to-moderate discounts (1–10%), especially for high-demand products.
+
+- Reduce 15–20%+ discounting unless clearing slow-moving stock.
+
+- Introduce personalized small-discount offers (e.g., 5% welcome discount) to maximize conversion without hurting margins.
 
 ## 8. Conclusion
 
